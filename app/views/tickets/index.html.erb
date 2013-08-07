@@ -16,7 +16,7 @@
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= link_to ticket.title ticket_path(ticket) %></td>
+        <td><%= link_to ticket.title, ticket_path(ticket) %></td>
         <td><%= ticket.question %></td>
         <td><%= ticket.answer %></td>
         <td><%= ticket.requested_by %></td>

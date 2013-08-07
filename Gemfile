@@ -29,6 +29,7 @@ group :development do
   gem "binding_of_caller"   #better errors optional dependency for even nicer traces and live irb session
   gem 'coffee-rails-source-maps'  #to see coffee script in chrome source tab of inspect element.  Write debugger in file to stop
                                   #at that coffee script location
+  gem "letter_opener"
 end
 
 group :test do

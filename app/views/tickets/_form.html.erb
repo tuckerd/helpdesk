@@ -1,6 +1,12 @@
 <%= form_for @ticket, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :requested_by, "Email", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :requested_by, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, "Subject", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
@@ -11,19 +17,6 @@
       <%= f.text_area :question, :class => 'text_area' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :answer, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :answer, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :requested_by, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :requested_by, :class => 'text_field' %>
-    </div>
-  </div>
-
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
