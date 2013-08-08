@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 group :production do
   gem 'postmark-rails'
+  gem 'unicorn'
 end
 
 group :development do
