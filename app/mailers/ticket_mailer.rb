@@ -9,7 +9,7 @@ class TicketMailer < ActionMailer::Base
   def new_ticket(ticket)
     @ticket = ticket
     mail to: "jacksbac@hotmail.com",
-      subject: "Ticket ID: #{ticket.id} #{@ticket.title}",
+      subject: "HelpDesk Ticket: #{@ticket.title}",
       reply_to: "0a033594f53514fea3230d23ae335cfd+#{ticket.id}@inbound.postmarkapp.com" 
   end
 end

@@ -9,7 +9,11 @@
   <dt><strong><%= model_class.human_attribute_name(:question) %>:</strong></dt>
   <dd><%= @ticket.question %></dd>
   <dt><strong><%= model_class.human_attribute_name(:answer) %>:</strong></dt>
-  <dd><%= @ticket.answer %></dd>
+  <% if @ticket.answer.nil? %>
+    <dd>Ticket is still being processed by our helpdesk staff.  Please check back soon.</dd>
+  <% else %>
+    <dd><%= @ticket.answer %></dd>
+  <% end %>
   <dt><strong><%= model_class.human_attribute_name(:requested_by) %>:</strong></dt>
   <dd><%= @ticket.requested_by %></dd>
 </dl>

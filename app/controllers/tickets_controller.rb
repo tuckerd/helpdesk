@@ -1,7 +1,8 @@
 class TicketsController < ApplicationController
+  before_filter :find_ticket, only: [:show, :edit, :update]
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.order("created_at DESC")
   end
 
   def new
@@ -20,9 +21,30 @@ class TicketsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @ticket.update_attributes(params[:ticket])
+      flash[:notice] = "Ticket has been updated."
+      redirect_to @ticket
+    else
+      flash[:alert] = "Error updating ticket."
+      render action: "edit"
+    end
+  end
+
   def destroy
     Ticket.find(params[:id]).destroy
     flash[:notice] = "Ticket has been removed."
     redirect_to tickets_path
+  end
+
+private
+  def find_ticket
+    @ticket = Ticket.find(params[:id])
   end
 end
