@@ -9,6 +9,8 @@ gem 'pg'
 gem 'dynamic_form', '1.1.4'
 gem 'twitter-bootstrap-rails'
 
+gem 'postmark-mitt'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -26,7 +28,6 @@ gem 'jquery-rails'
 group :production do
   gem 'postmark-rails'
   gem 'unicorn'
-  gem 'postmark-mitt'
 end
 
 group :development do
