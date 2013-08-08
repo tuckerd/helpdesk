@@ -1,5 +1,5 @@
 class TicketMailer < ActionMailer::Base
-  default from: "new_ticket_deamon@helpdesk.com"
+  default from: "danielle@tuckerlabs.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,7 +8,7 @@ class TicketMailer < ActionMailer::Base
   #
   def new_ticket(ticket)
     @ticket = ticket
-    mail to: "danielle@tuckerlabs.com",
+    mail to: "jacksbac@hotmail.com",
       subject: @ticket.title
   end
 end
