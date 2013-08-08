@@ -10,5 +10,6 @@ class TicketMailer < ActionMailer::Base
     @ticket = ticket
     mail to: "jacksbac@hotmail.com",
       subject: @ticket.title
+      reply_to: "0a033594f53514fea3230d23ae335cfd@inbound.postmarkapp.com" 
   end
 end
