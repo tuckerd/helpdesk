@@ -23,6 +23,10 @@ end
 
 gem 'jquery-rails'
 
+group :production do
+  gem 'postmark-rails'
+end
+
 group :development do
   gem "better_errors"       #better error messages on your browser 
                             #got to localhost:3000/__better_errors to get the screen at any time in the page
