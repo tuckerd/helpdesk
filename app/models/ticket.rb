@@ -7,11 +7,7 @@ class Ticket < ActiveRecord::Base
       ticket = Ticket.new
       ticket.question = mitt.message_id
       ticket.title      = mitt.subject
-      ticket.body = if mitt.text_body.blank?
-        mitt.html_body
-      else
-        mitt.text_body
-      end
+      ticket.question = mitt.text_body
       ticket.save
   end
 
